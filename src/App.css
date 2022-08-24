@@ -1,0 +1,35 @@
+h1{
+  background-color: #541313;
+  color: grey;
+}
+
+img{
+width: 200px;
+height: 200px;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  padding-right: 30px;
+}
+
+ul{
+  padding: 5px;
+  height: 2rem;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  border-radius: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.container-nav{
+  font-family: monospace;
+}
