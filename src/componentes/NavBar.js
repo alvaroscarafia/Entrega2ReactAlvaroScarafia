@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import foto from '../multimedia/img/LOGOdisaing.svg';
+import CartWidget from './CartWidget.js';
+
 
 const NavBar = () => {
 return (
@@ -12,6 +14,7 @@ return (
                 <li><a href="#">Galeria</a></li>
                 <li><a href="#">Productos</a></li>
                 <li><a href="#">Ingresar</a></li>
+                <CartWidget/>
             </ul>
         </div>
 </div>
