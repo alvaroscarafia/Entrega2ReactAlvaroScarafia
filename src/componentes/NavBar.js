@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
+import './navbar.css'
 import foto from '../multimedia/img/LOGOdisaing.svg';
 import CartWidget from './CartWidget.js';
 
