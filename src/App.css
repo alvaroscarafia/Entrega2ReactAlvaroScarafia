@@ -1,6 +1,6 @@
 h1{
   font-family: monospace;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: underline;
 }
 
@@ -12,5 +12,10 @@ height: 200px;
 .logo{
   display: flex;
   justify-content: center;
-  padding-right: 30px;
+  padding: 50px;
+  
+}
+
+body{
+  background-color: black;
 }
