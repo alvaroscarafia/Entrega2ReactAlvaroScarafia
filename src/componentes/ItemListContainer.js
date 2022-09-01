@@ -8,7 +8,7 @@ const ItemListContainer = ({greeting}) => {
     <div className='contenedor'>
         <h1>{greeting}</h1>
         <div className='contador'>
-          <ItemCount stock='5'/>
+          <ItemCount stock='5' onAdd={ ( contador )=> alert(`Agrego ${contador} al carrito`)}/>
         </div>
     </div>
     
