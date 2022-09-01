@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './navbar.css'
+import '../styles/navbar.css'
 import foto from '../multimedia/img/LOGO.png';
 import CartWidget from './CartWidget.js';
 

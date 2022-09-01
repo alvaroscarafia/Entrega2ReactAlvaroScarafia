@@ -6,19 +6,21 @@
 }
 
 .contador{    
-    color: black;
+    color: white;
     margin-top: 50px;
     border: 0px solid #3c67e3;
     border-radius: 20px 100px;
-    padding: 10px;
-    background-color: rgb(173, 163, 163);
-
+    padding: 50px;
+    background-color: #100F0F;
 }
 
 button{
+    color: white;
     border-radius: 10px;
     padding: 7px;
     margin: 10px;
+    background-color: #100F0F;
+    border: 1px solid #3c67e3;
 }
 
 .contador:hover{
