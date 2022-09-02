@@ -1,17 +1,17 @@
 .contenedor{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,600px);
+    grid-auto-rows: 50px;
+    column-gap: 1rem;
 }
 
-.contador{    
+.contador{
     color: white;
     margin-top: 50px;
     border: 0px solid #3c67e3;
     border-radius: 20px 100px;
-    padding: 50px;
-    background-color: #100F0F;
+    padding: 70px;
+    background-color: #141313;
 }
 
 button{
