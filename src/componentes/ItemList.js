@@ -1,29 +1,39 @@
 import React from 'react';
 import Item from './Item';
-import { useState } from 'react';
-import mesaRio from "../multimedia/img/rio.JPEG";
-import mesaFusion from "../multimedia/img/fusion.JPG";
+import { useState, useEffect } from 'react';
+import productos from "../productos"
 
+const ItemList = () => {
 
-const ItemList = ({}) => {
+  let [items, setItem] = useState([]);
 
-  const [items, setItem] = useState(
-    [{id: 1, title: "Mesa Rio",price: 15000,img:mesaRio},
-  {id: 2, title: "Mesa Fusion", price: 18000,img:mesaFusion},
-  ]);
+  useEffect(()=>{
+    const task = new Promise((resolve,reject)=>{
+    setTimeout(()=> {
+      resolve(productos);
+    },2000)
+  } );
+
+  task.then((res)=>{
+    setItem(res)
+  });
+  },[]);
 
   return (
     <div>
-        {items.map((items) =>{
+        {
+            items.map((item) =>{
           return <Item
-          key={items.id}
-          img={items.img}
-          title={items.title}
-          price={items.price}
+          key={item.id}
+          src={item.src}
+          title={item.title}
+          price={item.price}
           />
-        })}
+        })
+      }
+    
     </div>
   )
 }
 
-export default ItemList
+export default ItemList;
