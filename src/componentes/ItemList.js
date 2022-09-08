@@ -1,28 +1,14 @@
 import React from 'react';
 import Item from './Item';
-import { useState, useEffect } from 'react';
-import productos from "../productos"
 
-const ItemList = () => {
 
-  let [items, setItem] = useState([]);
+const ItemList = ({props}) => {
 
-  useEffect(()=>{
-    const task = new Promise((resolve,reject)=>{
-    setTimeout(()=> {
-      resolve(productos);
-    },2000)
-  } );
-
-  task.then((res)=>{
-    setItem(res)
-  });
-  },[]);
 
   return (
     <div>
         {
-            items.map((item) =>{
+            props.map((item) =>{
           return <Item
           key={item.id}
           src={item.src}
