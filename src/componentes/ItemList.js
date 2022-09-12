@@ -2,6 +2,7 @@ import React from 'react';
 import Item from './Item';
 
 
+
 const ItemList = ({props}) => {
 
 
@@ -17,8 +18,9 @@ const ItemList = ({props}) => {
           />
         })
       }
-    
-    </div>
+      
+      </div>
+
   )
 }
 

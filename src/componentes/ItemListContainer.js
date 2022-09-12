@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+
 import '../styles/itemList.css';
 import ItemList from './ItemList';
 import productos from "../productos"
@@ -26,12 +26,6 @@ let [items, setItem] = useState([]);
     <div className='contenedor'>
         <h1>{greeting}</h1>
         <div><ItemList props={items}/></div>
-        <div className='contador'>
-          <ItemCount stock='5' onAdd={ ( contador )=> { localStorage.setItem("CantidadCarrito", contador)
-            alert(`Agrego ${contador} al carrito`
-            )}}/>
-        </div>
-        
     </div>
     
   )
