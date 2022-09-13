@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 import '../styles/itemList.css';
 import ItemList from './ItemList';
 import productos from "../productos"

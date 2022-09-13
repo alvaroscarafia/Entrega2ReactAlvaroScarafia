@@ -1,6 +1,8 @@
-import React from 'react'
-import "../styles/item.css"
-import ItemCount from './ItemCount'
+import React from 'react';
+import "../styles/item.css";
+import ItemCount from './ItemCount';
+import ItemDetailContainer from './ItemDetailContainer';
+
 
 
 
@@ -16,13 +18,12 @@ const Item = (props) => {
         <div className='contador'>
 
     <ItemCount stock='5' onAdd={ ( contador )=> { localStorage.setItem("CantidadCarrito", contador)
-            alert(`Agrego ${contador} ${props.title} al carrito`
-            )}}/>
+            alert(`Agrego ${contador} ${props.title} al carrito`)}}/>
 
       </div>
+      <div><ItemDetailContainer/></div>
       </ul>
     </div>
-
   )
 }
 
