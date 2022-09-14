@@ -17,12 +17,13 @@ const ItemDetailContainer = () => {
   getDetails.then((res)=>{
     setDetails(res)
   });
-  }, []);
+  },[] );
 
   return (
     <div>
-        <ItemDetail props={details}/></div>
+        <ItemDetail props={details}/>
+        </div>
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

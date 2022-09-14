@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ItemListContainer from './componentes/ItemListContainer';
-import NavBar from './componentes/NavBar';
+import Router from './app/Router';
 
 
 
@@ -9,10 +8,9 @@ import NavBar from './componentes/NavBar';
 function App() {
   return (
     <div>
-      <NavBar/>
-      <ItemListContainer greeting={"Bienvenido a Solano Diseño! "}/>
+      <Router/>
     </div>
-    );
+    )
 }
 
 export default App;

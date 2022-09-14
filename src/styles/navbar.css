@@ -9,13 +9,14 @@ ul {
     border-radius: 10%;
 }
 
-a {
-    text-decoration: none;
+li {
     color: rgb(0, 0, 0);
     font-size: 30px;
     text-shadow: red -2px 0,
             cyan 2px 0;
 }
+
+
 
 .container-nav {
     font-family: monospace;}
