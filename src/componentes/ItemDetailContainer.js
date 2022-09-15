@@ -1,10 +1,11 @@
 import React from 'react';
 import productos from "../productos";
-import { useState, useEffect } from 'react';
+import { useState, useEffect,  } from 'react';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-    let [details, setDetails] = useState([]);
+    const [details, setDetails] = useState({});
+    
 
  useEffect(()=>{
 
@@ -14,16 +15,14 @@ const ItemDetailContainer = () => {
     },2000)
   } );
 
-  getDetails.then((res)=>{
-    setDetails(res)
-  });
+  getDetails.then(res=>setDetails(res));
   },[] );
 
   return (
     <div>
         <ItemDetail props={details}/>
         </div>
-  )
+  );
 }
 
 export default ItemDetailContainer;

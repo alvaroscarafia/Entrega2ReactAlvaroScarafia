@@ -3,27 +3,47 @@ import '../styles/itemList.css';
 import ItemList from './ItemList';
 import productos from "../productos"
 import { useState, useEffect } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Link, useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ({greeting}) => {
 
-let [items, setItem] = useState([]);
+const [items, setItem] = useState([]);
+
+const {category} = useParams();
 
  useEffect(()=>{
     const task = new Promise((resolve,reject)=>{
     setTimeout(()=> {
       resolve(productos);
-    },2000)
-  } );
-
-  task.then((res)=>{
-    setItem(res)
+    },1000)
   });
-  },[]);
+
+  if(category){
+    task.then(res => setItem(res.filter(items => items.category === category)));
+  }else{
+    task.then(res =>{setItem(res)});
+  }
+
+  },[category]);
 
   return (
     <div className='contenedor'>
         <h1>{greeting}</h1>
+        <div>
+          <Dropdown>
+      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+        Categorias
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item ><Link to="/Categorias/Ratoneras">Mesas Ratoneras</Link></Dropdown.Item>
+        <Dropdown.Item ><Link to="/Categorias/Comedor">Mesas Comedor</Link></Dropdown.Item>
+        <Dropdown.Item ><Link to="/Categorias/Tablas">Tablas</Link></Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+        </div>
         <div><ItemList props={items}/></div>
     </div>
     
