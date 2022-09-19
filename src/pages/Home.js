@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <NavBar/>
       <ItemListContainer greeting={"Bienvenido a Solano Diseño! "}/>
-      </div>
+    </div>
   )
 }
 

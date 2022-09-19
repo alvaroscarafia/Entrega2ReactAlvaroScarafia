@@ -16,6 +16,7 @@ const ItemList = ({props}) => {
           title={item.title}
           price={item.price}
           detail={item.detail}
+          props={item}
           />
         })
       }
