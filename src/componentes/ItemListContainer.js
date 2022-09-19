@@ -38,9 +38,9 @@ const {category} = useParams();
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item ><Link to="/Categorias/Ratoneras">Mesas Ratoneras</Link></Dropdown.Item>
-        <Dropdown.Item ><Link to="/Categorias/Comedor">Mesas Comedor</Link></Dropdown.Item>
-        <Dropdown.Item ><Link to="/Categorias/Tablas">Tablas</Link></Dropdown.Item>
+        <Dropdown.Item ><Link className='link' to="/Categorias/Ratoneras">Mesas Ratoneras</Link></Dropdown.Item>
+        <Dropdown.Item ><Link className='link' to="/Categorias/Comedor">Mesas Comedor</Link></Dropdown.Item>
+        <Dropdown.Item ><Link className='link' to="/Categorias/Tablas">Tablas</Link></Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
         </div>
