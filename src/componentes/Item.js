@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "../styles/item.css";
 import {Link} from 'react-router-dom';
-
+import { CartContext } from '../context/CartProvider';
 
 
 
 const Item = ({props}) => {
 
-  return (
+  const cartProduct = useContext(CartContext);
+  console.log('item:',cartProduct)
+  
+return (
     
     <Link to={`/Detalle/${props.id}`} className='container link'>
       <ul className='item'>

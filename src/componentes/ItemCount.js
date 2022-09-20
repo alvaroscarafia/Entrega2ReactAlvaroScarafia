@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const ItemCount = ({ stock,cuentaInicial = 1 ,onAdd}) =>{
     const [contador, setContador] = useState(cuentaInicial);
@@ -19,7 +19,7 @@ const ItemCount = ({ stock,cuentaInicial = 1 ,onAdd}) =>{
             contador < stock ? setContador(contador + 1) : setContador(stock)}}>
             +
         </button>
-        <button onClick={() => onAdd(contador)}><Link to='/cart' className=''>Agregar al carrito</Link></button>
+        <button onClick={() => onAdd(contador)}>Agregar al carrito</button>
     </div>
     );
 }

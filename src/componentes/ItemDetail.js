@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import NavBar from './NavBar';
 import '../styles/detail.css'
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({props}) => {
+  const [cart, setCart] = useState(false)
+
+  const onAdd = (c) =>{
+    setCart(true);
+  }
 
   return (
     <div>
@@ -16,9 +22,12 @@ const ItemDetail = ({props}) => {
         <h1>{props.title}</h1>
         <p>${props.price}</p>
         <p>{props.detail}</p>
-        <div className='contador'>
-            <ItemCount stock='5' onAdd={ ( contador )=> { localStorage.setItem("CantidadCarrito", contador)
-            alert(`Agrego ${contador} ${props.title} al carrito`)}}/>
+          <div className='contador'>
+            {
+              cart 
+              ? <Link to='/Cart'>Terminar Compra</Link>
+              : <ItemCount stock='5' onAdd={onAdd}/>
+            }
           </div>
       </div>
     </div>
