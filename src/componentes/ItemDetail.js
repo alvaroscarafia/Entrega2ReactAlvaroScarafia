@@ -3,13 +3,16 @@ import NavBar from './NavBar';
 import '../styles/detail.css'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/CartProvider';
 
 
 const ItemDetail = ({props}) => {
-  const [cart, setCart] = useState(false)
+  const [data, setData] = useState(false);
+  const {addItem} = useCartContext();
 
-  const onAdd = (c) =>{
-    setCart(true);
+  const onAdd = (quantity) =>{
+    setData(true);
+    addItem(props, quantity);
   }
 
   return (
@@ -24,7 +27,7 @@ const ItemDetail = ({props}) => {
         <p>{props.detail}</p>
           <div className='contador'>
             {
-              cart 
+              data 
               ? <Link to='/Cart'>Terminar Compra</Link>
               : <ItemCount stock='5' onAdd={onAdd}/>
             }
