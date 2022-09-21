@@ -33,7 +33,7 @@ const {category} = useParams();
         <h1>{greeting}</h1>
         <div>
           <Dropdown>
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      <Dropdown.Toggle  id="dropdown-basic" className='boton'>
         Categorias
       </Dropdown.Toggle>
 
