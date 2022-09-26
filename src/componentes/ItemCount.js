@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+import "../styles/count.css"
 
 
 const ItemCount = ({ stock,cuentaInicial = 1 ,onAdd}) =>{
     const [contador, setContador] = useState(cuentaInicial);
 
     return (
-    <div>
-        Cantidad: {contador}
+    <div className='contadorDetail'>
+        <p>Cantidad: {contador}</p>
         
         <button onClick={() => setContador(cuentaInicial)}>Resetiar</button>
 

@@ -13,9 +13,9 @@ return (
     <div className='logo'><NavLink to="/"><img style={{width:500, height:185}} src={foto} alt="logo"/></NavLink></div>
         <div>
             <ul>
-                <li><NavLink className='link' to="/">Inicio</NavLink></li>
-                <li><NavLink className='link' to="/Gallery/">Galeria</NavLink></li>
-                <li><NavLink className='link' to="/Contact/">Contacto</NavLink></li>
+                <li><NavLink className='link-nav' to="/">Inicio</NavLink></li>
+                <li><NavLink className='link-nav' to="/Gallery/">Galeria</NavLink></li>
+                <li><NavLink className='link-nav' to="/Contact/">Contacto</NavLink></li>
                 <li><CartWidget/></li>
             </ul>
         </div>

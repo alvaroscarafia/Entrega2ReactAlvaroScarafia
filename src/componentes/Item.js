@@ -8,7 +8,7 @@ import { CartContext } from '../context/CartProvider';
 const Item = ({props}) => {
 
   const cartProduct = useContext(CartContext);
-  console.log('item:',cartProduct)
+  
   
 return (
     

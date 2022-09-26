@@ -1,15 +1,41 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import NavBar from '../componentes/NavBar';
-import { CartContext } from '../context/CartProvider';
+import { useCartContext } from '../context/CartProvider';
+import { Link } from 'react-router-dom';
+import ItemCart from '../componentes/ItemCart';
+import '../styles/itemCart.css';
+import EmptyCartPng from "../multimedia/img/carritovacio.png";
+
 
 const Cart = () => {
 
-  const cartProduct = useContext(CartContext);
-  console.log('cartProduct', cartProduct);
+  const {cart, finalPrice} = useCartContext();
+
+  //renderin condicional para el carrito con los productos finales
+  if(cart.length === 0){
+    return (
+      <>
+        <NavBar/>
+        <div className='emptyCart'>
+          <img src={EmptyCartPng} alt="EmptyCartPng" />
+          <p>No hay elementos en el carrito</p>
+          <Link className='finish-link' to='/'>Hacer Compras</Link>
+        </div>
+      </>
+    )
+  }
 
   return (
     <div>
-        <NavBar/>
+      <div><NavBar/></div>
+        <div className=''>
+          {
+            cart.map(product => <ItemCart key={product.id} product={product}/>)
+          }
+          <p className='total' style={{color: "white"}}>
+            Total:$ {finalPrice()}
+          </p>
+        </div>
     </div>
   )
 }

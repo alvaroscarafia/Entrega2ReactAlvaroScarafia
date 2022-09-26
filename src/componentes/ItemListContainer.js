@@ -10,7 +10,6 @@ import { Link, useParams } from 'react-router-dom';
 const ItemListContainer = ({greeting}) => {
 
 const [items, setItem] = useState([]);
-
 const {category} = useParams();
 
  useEffect(()=>{
@@ -25,7 +24,6 @@ const {category} = useParams();
   }else{
     task.then(res =>{setItem(res)});
   }
-
   },[category]);
 
   return (

@@ -25,10 +25,11 @@ const ItemDetail = ({props}) => {
         <h1>{props.title}</h1>
         <p>${props.price}</p>
         <p>{props.detail}</p>
-          <div className='contador'>
+          <div
+          className='finish'>
             {
               data 
-              ? <Link to='/Cart'>Terminar Compra</Link>
+              ? <Link className='finish-link' to='/Cart'>Terminar Compra</Link>
               : <ItemCount stock='5' onAdd={onAdd}/>
             }
           </div>
