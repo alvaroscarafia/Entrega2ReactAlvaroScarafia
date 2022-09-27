@@ -1,8 +1,7 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
+import {getFirestore, collection, getDocs,query , where} from "firebase/firestore";
 import '../styles/itemList.css';
 import ItemList from './ItemList';
-import productos from "../productos"
-import { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link, useParams } from 'react-router-dom';
 
@@ -12,18 +11,18 @@ const ItemListContainer = ({greeting}) => {
 const [items, setItem] = useState([]);
 const {category} = useParams();
 
- useEffect(()=>{
-    const task = new Promise((resolve,reject)=>{
-    setTimeout(()=> {
-      resolve(productos);
-    },1000)
-  });
-
-  if(category){
-    task.then(res => setItem(res.filter(items => items.category === category)));
-  }else{
-    task.then(res =>{setItem(res)});
-  }
+useEffect(()=>{
+    const database = getFirestore();
+    const dataCollection = collection(database,"products");
+    
+    if(category){
+      const dataFilter = query(dataCollection, where("category","==",category))
+        getDocs(dataFilter)
+          .then(res => setItem( res.docs.map(product => ({ id: product.id, ...product.data() }))))
+    }else{
+      getDocs(dataCollection)
+          .then(res => setItem( res.docs.map(product => ({ id: product.id, ...product.data() }))))
+    }
   },[category]);
 
   return (
@@ -42,7 +41,7 @@ const {category} = useParams();
       </Dropdown.Menu>
     </Dropdown>
         </div>
-        <div><ItemList props={items}/></div>
+        <div><ItemList items={items}/></div>
     </div>
     
   )

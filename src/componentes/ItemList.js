@@ -3,25 +3,15 @@ import Item from './Item';
 
 
 
-const ItemList = ({props}) => {
+const ItemList = ({items =[]}) => {
 
 
   return (
     <div>
         {
-            props.map((item) =>{
-          return <Item
-          key={item.id}
-          src={item.src}
-          title={item.title}
-          price={item.price}
-          detail={item.detail}
-          props={item}
-          />
-        })
-      }
-      
-      </div>
+          items.map(item =><Item key={item.id} info={item}/>)
+        }
+    </div>
 
   )
 }

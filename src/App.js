@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Router from './app/Router';
 import CartProvider from './context/CartProvider';
+import "./firebase/firebase";
 
 
 

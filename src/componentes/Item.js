@@ -5,18 +5,18 @@ import { CartContext } from '../context/CartProvider';
 
 
 
-const Item = ({props}) => {
+const Item = ({info}) => {
 
-  const cartProduct = useContext(CartContext);
+useContext(CartContext);
   
   
 return (
     
-    <Link to={`/Detalle/${props.id}`} className='container link'>
+    <Link to={`/Detalle/${info.id}`} className='container link'>
       <ul className='item'>
-        <img src={props.src} alt="producto" />
-        <li>{props.title}</li>
-        <li>Precio: ${props.price}</li>
+        <img src={info.src} alt="producto" />
+        <li>{info.title}</li>
+        <li>Precio: ${info.price}</li>
       </ul>
     </Link>
     
