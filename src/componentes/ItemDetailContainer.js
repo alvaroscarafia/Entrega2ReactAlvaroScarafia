@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
 
   return (
         <div>
-        <ItemDetail props={details}/>
+          <ItemDetail props={details}/>
         </div>
   );
 }

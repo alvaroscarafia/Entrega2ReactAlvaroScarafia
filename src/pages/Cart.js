@@ -5,11 +5,30 @@ import { Link } from 'react-router-dom';
 import ItemCart from '../componentes/ItemCart';
 import '../styles/itemCart.css';
 import EmptyCartPng from "../multimedia/img/carritovacio.png";
+import {getFirestore, collection, addDoc } from "firebase/firestore";
 
 
 const Cart = () => {
-
   const {cart, finalPrice} = useCartContext();
+
+  const buy ={
+    buyer:{
+      name: 'Alvaro Scarafia David',
+      email: 'alvaro_s.d@hotmail.com',
+      phone: '3434502304',
+      address: 'parana'
+    },
+    items: cart.map(product => ({id:product.id, title: product.title, price: product.price, quantity:product.quantity})),
+    total: finalPrice(),
+  }
+
+  const buyFunction = () =>{
+    const dataBase = getFirestore();
+    const buyCollection = collection(dataBase,'Buy Orders');
+    
+    addDoc(buyCollection, buy)
+      .then(({id}) => console.log(id))
+  }
 
   //renderin condicional para el carrito con los productos finales
   if(cart.length === 0){
@@ -35,6 +54,7 @@ const Cart = () => {
           <p className='total' style={{color: "white"}}>
             Total:$ {finalPrice()}
           </p>
+          <button onClick={buyFunction}>COMPRAR</button>
         </div>
     </div>
   )
