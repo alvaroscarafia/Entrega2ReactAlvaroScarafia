@@ -5,6 +5,7 @@ import Gallery from "../pages/Gallery";
 import Categorias from "../componentes/Categorias";
 import ItemDetailContainer from "../componentes/ItemDetailContainer";
 import Cart from "../pages/Cart";
+import BuyForm from "../componentes/BuyForm"
 
 
 
@@ -18,6 +19,7 @@ const Router = () => (
                 <Route path="/Categorias/:category" element={<Categorias/>}/>
                 <Route path="/Detalle/:detalleId" element={<ItemDetailContainer/>}/>
                 <Route path="/Cart" element={<Cart/>}/>
+                <Route path="/buyForm" element={<BuyForm/>}/>
             </Route>
         </Routes>
     </BrowserRouter>

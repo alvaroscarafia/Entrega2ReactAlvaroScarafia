@@ -1,0 +1,17 @@
+.buyForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+}
+
+h2{
+    color: white;
+}
+
+input{
+    width: 40%;
+    margin: 10px;
+    height: 3rem;
+    background-color: #eee1e1;
+}

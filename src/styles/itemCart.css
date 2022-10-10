@@ -57,3 +57,8 @@ button:hover {
     font-family: monospace;
     font-size: 2rem;
 }
+
+.buyButton{
+    display: flex;
+    justify-content: center;
+}

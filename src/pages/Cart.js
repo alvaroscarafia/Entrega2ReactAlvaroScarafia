@@ -47,14 +47,14 @@ const Cart = () => {
   return (
     <div>
       <div><NavBar/></div>
-        <div className=''>
+        <div>
           {
             cart.map(product => <ItemCart key={product.id} product={product}/>)
           }
-          <p className='total' style={{color: "white"}}>
-            Total:$ {finalPrice()}
-          </p>
-          <button onClick={buyFunction}>COMPRAR</button>
+          <p className='total' style={{color: "white"}}>Total:$ {finalPrice()}</p>
+          <div className='buyButton'>
+            <Link to="/buyForm"><button onClick={buyFunction}>COMPRAR</button></Link>
+          </div>
         </div>
     </div>
   )
