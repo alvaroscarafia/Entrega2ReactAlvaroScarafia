@@ -2,42 +2,45 @@ import React from 'react';
 import { useState } from 'react';
 import Navbar  from '../componentes/NavBar';
 import "../styles/buyForm.css"
-import {getFirestore, collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { useCartContext } from '../context/CartProvider';
+import {db} from '../firebase/firebase';
+
 
 const BuyForm = () => {
-  const dataBase = getFirestore();
   const {cart, finalPrice} = useCartContext();
 
-  const initialValue = {
-      name: '',
-      email:'' ,
-      phone: '',
-      address:'' ,
-    items: cart.map(product => ({id:product.id, title: product.title, price: product.price, quantity:product.quantity})),
-    total: finalPrice(),
-  }
-
-  const [buy, setBuy] = useState(initialValue);
+  const [buy, setBuy] = useState({
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+  });
 
   const catchInputs = (e) =>{
     const {name, value} = e.target;
     setBuy({...buy,[name]:value})
   }
 
+const createItem = async(obj) => {
+    const colRef = collection(db, 'orders');
+    const data = await addDoc(colRef, obj);
+    return data.id;
+};
 
-  const saveData = async (e) => {
+  const saveData = (e) =>{
     e.prevetDefault();
+    
+    const items = cart.map(product => ({id:product.id, title: product.title, price: product.price, quantity:product.quantity}));
+    const final = finalPrice();
+    const obj = {buy,items,final};
 
-    try {
-      await addDoc(collection(dataBase,'orders'),{
-        ...buy
-      })
-    } catch (error) {
-      console.log(error)
-    }
-
-    setBuy({...initialValue})
+    createItem(obj).then(id=> console.log(id));
+    
+    setBuy({name: "",
+      email: "",
+      phone: "",
+      address: ""})
   }
 
 
@@ -50,22 +53,20 @@ const BuyForm = () => {
           <h2>Formulario de Compra</h2>
 
           <input type="text" name="name" placeholder="Ingrese su nombre..." 
-          onChange={catchInputs} value={buy.name}/>
+          value={buy.name} onChange={catchInputs}/>
 
           <input type="email" name="email" placeholder="Ingrese su email..." 
-          onChange={catchInputs} value={buy.email}/>
+          value={buy.email} onChange={catchInputs} />
 
           <input type="number" name="phone" placeholder="Ingrese su numero de telefono..." 
-          onChange={catchInputs} value={buy.phone}/>
+          value={buy.phone} onChange={catchInputs}/>
 
           <input type="text" name="address" placeholder="Ingrese su direccion..." 
-          onChange={catchInputs} value={buy.address}/>
+          value={buy.address} onChange={catchInputs}/>
 
-            <div>
-              <button>
-                Finalizar Compra
-              </button>
-            </div>
+            <button>
+              Finalizar Compra
+            </button>
         </div>
       </form>
 
