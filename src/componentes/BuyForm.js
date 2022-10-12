@@ -2,14 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import Navbar  from '../componentes/NavBar';
 import "../styles/buyForm.css"
-import { collection, addDoc } from "firebase/firestore";
 import { useCartContext } from '../context/CartProvider';
-import {db} from '../firebase/firebase';
+import {createItem} from '../firebase/firebase';
 
 
 const BuyForm = () => {
   const {cart, finalPrice} = useCartContext();
-
   const [buy, setBuy] = useState({
       name: "",
       email: "",
@@ -18,18 +16,11 @@ const BuyForm = () => {
   });
 
   const catchInputs = (e) =>{
-    const {name, value} = e.target;
-    setBuy({...buy,[name]:value})
+    setBuy({...buy, [e.target.name] : e.target.value})
   }
 
-const createItem = async(obj) => {
-    const colRef = collection(db, 'orders');
-    const data = await addDoc(colRef, obj);
-    return data.id;
-};
-
   const saveData = (e) =>{
-    e.prevetDefault();
+    e.preventDefault();
     
     const items = cart.map(product => ({id:product.id, title: product.title, price: product.price, quantity:product.quantity}));
     const final = finalPrice();
@@ -40,7 +31,7 @@ const createItem = async(obj) => {
     setBuy({name: "",
       email: "",
       phone: "",
-      address: ""})
+      address: "",})
   }
 
 
@@ -48,7 +39,7 @@ const createItem = async(obj) => {
     <div>
       <Navbar/>
 
-      <form onSubmit={saveData}>
+      <form>
         <div className='buyForm'>
           <h2>Formulario de Compra</h2>
 
@@ -64,7 +55,7 @@ const createItem = async(obj) => {
           <input type="text" name="address" placeholder="Ingrese su direccion..." 
           value={buy.address} onChange={catchInputs}/>
 
-            <button>
+            <button onClick={saveData} type='submit'>
               Finalizar Compra
             </button>
         </div>

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
+import { collection, addDoc } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -12,7 +13,15 @@ const firebaseConfig = {
 };
 
 const firebaseApp =initializeApp(firebaseConfig);
+
 export const db = getFirestore(firebaseApp);
+
+export  const createItem = async(obj) => {
+    const colRef = collection(db, 'orders');
+    const data = await addDoc(colRef, obj);
+    return data.id;
+};
+
 
 initializeApp(firebaseConfig);
 
