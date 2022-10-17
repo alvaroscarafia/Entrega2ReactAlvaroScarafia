@@ -6,7 +6,7 @@
 
 Solano diseño es un emprendimiento dedicado a la personalizacion en resina de mesas, tablas, barras, y mas.
 
-##Librerias
+## Librerias
 
 En esta app de e-commerce utilice bootstrap-toastify.
 
