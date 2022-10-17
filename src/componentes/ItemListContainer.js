@@ -30,7 +30,7 @@ useEffect(()=>{
         <h1>{greeting}</h1>
         <div>
           <Dropdown>
-      <Dropdown.Toggle  id="dropdown-basic" className='boton'>
+      <Dropdown.Toggle  id="dropdown-basic" className='boton link'>
         Categorias
       </Dropdown.Toggle>
 
