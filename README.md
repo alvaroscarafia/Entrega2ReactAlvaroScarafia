@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Navigation App
+
+[Gif](https://user-images.githubusercontent.com/103047957/196267538-050b0000-cc5b-4e05-8fd5-2e273214b761.gif)
+
+## Solano Diseño
+
+Solano diseño es un emprendimiento dedicado a la personalizacion en resina de mesas, tablas, barras, y mas.
+
+##Librerias
+
+En esta app de e-commerce utilice bootstrap-toastify.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,7 +18,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start`!
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
