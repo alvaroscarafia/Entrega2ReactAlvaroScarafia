@@ -1,4 +1,4 @@
-# Navigation App
+# Navigation App gif
 
 [Gif](https://user-images.githubusercontent.com/103047957/196267538-050b0000-cc5b-4e05-8fd5-2e273214b761.gif)
 
@@ -19,7 +19,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`!
-
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
