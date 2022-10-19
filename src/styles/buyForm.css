@@ -15,3 +15,16 @@ input{
     height: 3rem;
     background-color: #eee1e1;
 }
+
+.label{
+    color: #eee1e1;
+    font-family: monospace;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+}
+
+.subtitle{
+    text-decoration: underline;
+    margin: 2rem;
+    color: #eee1e1;
+}

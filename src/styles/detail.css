@@ -25,6 +25,8 @@
 }
 
 .finish-link{
+    font-family: monospace;
+    color: white;
     border: 1px solid #3c67e3;
     padding: 1rem;
     border-radius: 10px;

@@ -25,8 +25,7 @@ const ItemDetail = ({props}) => {
         <h1>{props.title}</h1>
         <p>${props.price}</p>
         <p>{props.detail}</p>
-          <div
-          className='finish'>
+          <div className='finish'>
             {
               data 
               ? <Link className='finish-link' to='/Cart'>Terminar Compra</Link>

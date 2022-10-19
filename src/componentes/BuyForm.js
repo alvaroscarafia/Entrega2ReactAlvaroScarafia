@@ -79,20 +79,25 @@ const BuyForm = () => {
 
       <form>
         <div className='buyForm'>
-          <h2>Formulario de Compra</h2>
+          <h2 className='subtitle'>Formulario de Compra</h2>
 
+          <label className='label'>Nombre y Apellido:</label>
           <input type="text" name="name" placeholder="Ingrese su nombre..." 
           value={buy.name} onChange={catchInputs}/>
 
+          <label className='label'>Email:</label>
           <input type="email" name="email" placeholder="Ingrese su email..." 
           value={buy.email} onChange={catchInputs} />
 
+          <label className='label'>Confirme su email:</label>
           <input type="email" name="email2" placeholder="Confirme su email..." 
           value={buy.email2} onChange={catchInputs} />
 
+          <label className='label'>Numero de Telefono:</label>
           <input type="number" name="phone" placeholder="Ingrese su numero de telefono..." 
           value={buy.phone} onChange={catchInputs}/>
 
+          <label className='label'>Direccion:</label>
           <input type="text" name="address" placeholder="Ingrese su direccion..." 
           value={buy.address} onChange={catchInputs}/>
 
