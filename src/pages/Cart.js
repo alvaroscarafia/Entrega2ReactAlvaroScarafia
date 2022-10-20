@@ -8,6 +8,7 @@ import EmptyCartPng from "../multimedia/img/carritovacio.png";
 
 
 
+
 const Cart = () => {
   const {cart, finalPrice} = useCartContext();
 
@@ -21,6 +22,7 @@ const Cart = () => {
           <p>No hay elementos en el carrito</p>
           <Link className='finish-link' to='/'>Hacer Compras</Link>
         </div>
+        
       </>
     )
   }
@@ -37,6 +39,7 @@ const Cart = () => {
             <Link to="/buyForm"><button>COMPRAR</button></Link>
           </div>
         </div>
+        
     </div>
   )
 }

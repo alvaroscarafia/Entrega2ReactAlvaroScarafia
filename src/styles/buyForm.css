@@ -16,6 +16,10 @@ input{
     background-color: #eee1e1;
 }
 
+input:focus{
+    outline: 1px solid goldenrod;
+}
+
 .label{
     color: #eee1e1;
     font-family: monospace;

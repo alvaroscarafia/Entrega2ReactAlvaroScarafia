@@ -1,9 +1,11 @@
 .contenedor{
+    position: relative;
     text-align: center;
     padding: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 200px;
 }
 
 .link{

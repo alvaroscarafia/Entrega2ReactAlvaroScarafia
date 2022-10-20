@@ -1,3 +1,7 @@
+*{
+  position: relative;
+}
+
 h1{
   font-family: monospace;
   color: #eee1e1;
